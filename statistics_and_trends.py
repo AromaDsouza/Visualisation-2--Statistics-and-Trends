@@ -38,7 +38,7 @@ Plotting the bar graph using pandas library by taking Country Name in the X axis
 and the years for the Y axis using the total population dataset.
 '''
 
-#Rot=0 keeps the country name straight without any rotation on the X axis
+#Rot=10 rotates the country name slightly to a degree of 10 on the X axis
 a.plot(kind="bar", x = 'Country Name', rot=10, figsize=(8, 6), edgecolor='black')
 
 plt.xlabel("Countries",fontsize=15)  #To label the x-axis
@@ -79,7 +79,7 @@ Plotting the bar graph using pandas library by taking Country Name in the X axis
 and the years for the Y axis using the forest area dataset.
 '''
 
-#Rot=0 keeps the country name straight without any rotation on the X axis
+#Rot=10 rotates the country name slightly to a degree of 10 on the X axis
 c.plot(kind="bar", x = 'Country Name',rot=10, figsize=(8, 6), edgecolor='black')  
 plt.xlabel("Countries", fontsize=15)  #To label the x-axis
 plt.title("Forest Area (sq. km)",fontsize=20)  #To mention the title for bar graph
@@ -94,7 +94,7 @@ def carbon_dioxide_emissions(carbon_dioxide_emissions_data):
     '''
     The above function named carbon_dioxide_emissions produces a pie chart 
     of the dataset from World Bank data.
-    forest_area_data: It is the dataset used for plotting the bar graph
+    forest_area_data: It is the dataset used for plotting the pie chart.
     '''
     
     #To read the data and create a dataframe
@@ -115,10 +115,10 @@ print(f)  #and f = dataframe2
 
 '''
 Third visualisation: Pie chart
-Plotting the pie chart using the matplotlib library by taking Country Name 
-in the X axis and the years for the Y axis using the CO2 emissions dataset.
+Plotting the pie chart using the matplotlib library.
 A new column named average is created and the mean of the columns is calculated using 
-numpy library,i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart.
+numpy library,i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart 
+using the CO2 emissions dataset.
 '''
 
 e["Average"] = np.mean(e, axis=1)
@@ -141,7 +141,7 @@ def renewable_energy(renewable_energy_data):
     
     '''
     The above function named renewable_energy produces a pie chart of the dataset from World Bank data.
-    renewable_energy_data: It is the dataset used for plotting the bar graph
+    renewable_energy_data: It is the dataset used for plotting the pie chart.
     '''
     
     #To read the data and create a dataframe
@@ -162,10 +162,10 @@ print(h)   #and h = dataframe2
 
 '''
 Fourth visualisation: Pie chart
-Plotting the pie chart using the matplotlib library by taking Country Name 
-in the X axis and the years for the Y axis using the renewable energy dataset.
+Plotting the pie chart using the matplotlib library.
 A new column named average is created and the mean of the columns is calculated using pandas library,
-i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart
+i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart 
+using the renewable energy dataset.
 '''
 
 g["Average"] = g.iloc[:, 1:3].mean(axis=1)
@@ -212,8 +212,8 @@ def climate_change(climate_change_data):
                                    axis=1)
     return dataframe1, dataframe2, dataframe3
 #Calling the function to read the master dataset
-x,y,z = climate_change("Master_dataset.csv")
-print(z)
+x,y,z = climate_change("Master_dataset.csv") #as x = dataframe1, y = dataframe2 and z = dataframe3
+print(z) 
 #Here we are using Pearson’s correlation coefficient 
 correlation = z.corr(method='pearson')
 print(correlation)
