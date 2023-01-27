@@ -230,13 +230,13 @@ im = ax.imshow(correlation, cmap = 'coolwarm', interpolation = 'nearest')
 #Setting ticks to column names i.e xtick and ytick are the markers denoting data points on the axes.
 plt.xticks(range(len(correlation.columns)), correlation.columns, fontsize = 15)
 plt.yticks(range(len(correlation.columns)), correlation.columns, fontsize = 15)
-plt.setp(ax.get_xticklabels(), rotation = 45, ha = "right", rotation_mode = "anchor")
+plt.setp(ax.get_xticklabels(), rotation = 45, horizontalalignment = "right", rotation_mode = "anchor")
 cbar = ax.figure.colorbar(im, ax = ax)  #Setting the color indicator axes to the heatmap
 #Creating loop over dimensions to get the annotations on the heatmap
 for i in range(len(z.columns)):
     for j in range(len(z.columns)):
-        text = ax.text(j, i, round(correlation.to_numpy()[i, j], 2), horizontal_alignment = "center", 
-                       vertical_alignment = "center", color = "black", fontsize = 20)
+        text = ax.text(j, i, round(correlation.to_numpy()[i, j], 2), horizontalalignment = "center", 
+                       verticalalignment = "center", color = "black", fontsize = 20)
 ax.set_title("India", fontsize = 25)  #To display title of the image
 fig.tight_layout()  #To fit the subplots
 plt.savefig('Heatmap.png', dpi = 144)  #Saving the image of the pie chart
