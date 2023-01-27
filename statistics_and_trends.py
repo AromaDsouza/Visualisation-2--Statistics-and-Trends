@@ -110,7 +110,6 @@ and the years for the Y axis using the total population dataset.
 
 #Rot=10 rotates the country name slightly to a degree of 10 on the X axis
 a.plot(kind = "bar", x = 'Country Name', rot = 10, figsize = (8, 6), edgecolor = 'black')
-
 plt.xlabel("Countries", fontsize = 15)  #To label the x-axis
 plt.title("Total Population", fontsize = 20) #To mention the title for bar graph
 #Legend shows the label names in form of a box on the upper right hand of the image
@@ -127,7 +126,7 @@ and the years for the Y axis using the forest area dataset.
 '''
 
 #Rot=10 rotates the country name slightly to a degree of 10 on the X axis
-c.plot(kind = "bar", x = 'Country Name', rot=10, figsize=(8, 6), edgecolor='black')  
+c.plot(kind = "bar", x = 'Country Name', rot = 10, figsize=(8, 6), edgecolor ='black')  
 plt.xlabel("Countries", fontsize = 15)  #To label the x-axis
 plt.title("Forest Area (sq. km)",fontsize = 20)  #To mention the title for bar graph
 #Legend shows the label names in form of a box on the upper right hand of the image
@@ -164,8 +163,8 @@ plt.show()  #To display the image of the bar graph
 '''
 Fourth visualisation: Pie chart
 Plotting the pie chart using the matplotlib library.
-A new column named average is created and the mean of the columns is calculated using pandas library,
-i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart 
+A new column named average is created and the mean of the columns is calculated using 
+pandas library, i.e of the years namely 1996,2006,2016 is taken for plotting the pie chart 
 using the renewable energy dataset.
 '''
 
@@ -236,10 +235,9 @@ cbar = ax.figure.colorbar(im, ax = ax)  #Setting the color indicator axes to the
 #Creating loop over dimensions to get the annotations on the heatmap
 for i in range(len(z.columns)):
     for j in range(len(z.columns)):
-        text = ax.text(j, i, round(correlation.to_numpy()[i, j], 2), ha="center", 
-                       va="center", color="black", fontsize = 20)
-ax.set_title("India", fontsize=25)  #To display title of the image
+        text = ax.text(j, i, round(correlation.to_numpy()[i, j], 2), horizontal_alignment = "center", 
+                       vertical_alignment = "center", color = "black", fontsize = 20)
+ax.set_title("India", fontsize = 25)  #To display title of the image
 fig.tight_layout()  #To fit the subplots
-plt.savefig('Heatmap.png', dpi=144)  #Saving the image of the pie chart
+plt.savefig('Heatmap.png', dpi = 144)  #Saving the image of the pie chart
 plt.show()  #To display the image of the heatmap
-
